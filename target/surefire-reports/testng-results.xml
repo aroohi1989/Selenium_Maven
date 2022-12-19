@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-12-08T18:28:31 IST" name="All Test Suite" finished-at="2022-12-08T18:28:40 IST" duration-ms="9780">
+    <groups>
+    </groups>
+    <test started-at="2022-12-08T18:28:31 IST" name="C:/Users/dP-PL/LearnMaven/LearnMaven" finished-at="2022-12-08T18:28:40 IST" duration-ms="9780">
+      <class name="SeleniumTest1">
+        <test-method signature="browserOpen()[pri:0, instance:SeleniumTest1@35cabb2a]" started-at="2022-12-08T18:28:31 IST" name="browserOpen" finished-at="2022-12-08T18:28:40 IST" duration-ms="9740" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserOpen -->
+        <test-method signature="mul()[pri:0, instance:SeleniumTest1@35cabb2a]" started-at="2022-12-08T18:28:40 IST" name="mul" finished-at="2022-12-08T18:28:40 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- mul -->
+        <test-method signature="sum()[pri:0, instance:SeleniumTest1@35cabb2a]" started-at="2022-12-08T18:28:40 IST" name="sum" finished-at="2022-12-08T18:28:40 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sum -->
+      </class> <!-- SeleniumTest1 -->
+    </test> <!-- C:/Users/dP-PL/LearnMaven/LearnMaven -->
+  </suite> <!-- All Test Suite -->
+</testng-results>
