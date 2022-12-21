@@ -4,6 +4,7 @@
     import org.openqa.selenium.chrome.ChromeDriver;
     import io.github.bonigarcia.wdm.WebDriverManager;
     import org.testng.Assert;
+    import org.testng.annotations.AfterClass;
     import org.testng.annotations.Test;
 
     import java.time.Duration;
@@ -15,22 +16,22 @@
     public class SeleniumTest1
     {
         WebDriver driver;
-        @Test
+        @Test(priority = 1)
         public void sum()
         {
             System.out.println("First Test from Maven");
             int a=10; int b=20;
             Assert.assertEquals(30 ,a+b);
         }
-        @Test
+        @Test(priority = 2)
         public void mul()
         {
             System.out.println("Second Test from Maven");
             int a=10; int b=10;
             Assert.assertEquals(100,a*b);
         }
-        @Test
-        public void Login()
+        @Test(priority = 3)
+        public void login()
         {
             String url= "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
             WebDriverManager.chromedriver().setup();
@@ -40,13 +41,13 @@
             driver.findElement(By.name("username")).sendKeys("Admin");
             driver.findElement(By.name("password")).sendKeys("admin123");
             driver.findElement(By.tagName("button")).click();
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
             Boolean flag=driver.getCurrentUrl().contains("dashboard");
             Assert.assertEquals(flag,true);
             //driver.quit();
             this.driver=driver;
         }
-        @Test
+        @Test(priority = 4)
         public void menuItems()
         {
             SeleniumTest1 st=new SeleniumTest1();
@@ -57,5 +58,10 @@
                 System.out.println(ele.getText());
             }
             Assert.assertEquals(len,11);
+        }
+        @AfterClass
+        public void closed()
+        {
+            driver.quit();
         }
     }
