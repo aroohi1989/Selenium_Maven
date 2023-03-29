@@ -1,10 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <test name="C:/Users/dP-PL/LearnMaven/LearnMaven">
+    <listeners>
+        <listener class-name="listners.MyListener" />
+    </listeners>
+
+    <!--test name="QA">
+        <parameter name="username" value="Admin"></parameter>
+        <parameter name="password" value="admin123"></parameter>
+        <parameter name="browser" value="Edge"></parameter>
         <classes>
             <class name="SeleniumTest1"/>
             <class name="SeleniumTest2"/>
+        </classes>
+    </test-->
+    <!--test name="QA2">
+        <parameter name="username" value="Admin"></parameter>
+        <parameter name="password" value="admin123"></parameter>
+        <parameter name="browser" value="Chrome"></parameter>
+        <classes>
+            <class name="SeleniumTest1">
+            <class name="SeleniumTest2"/>
+        </classes>
+    </test-->
+    <test name="XGL">
+        <parameter name="username" value="DBI"></parameter>
+        <parameter name="password" value="Abcd1234"></parameter>
+        <parameter name="URL" value="http://10.7.30.134/xGLinear/login.html"></parameter>
+        <parameter name="Version" value="xGLinear 2.5.3"></parameter>
+        <parameter name="browser" value="Chrome"></parameter>
+        <classes>
+            <!--class name="SeleniumTest1"/-->
+            <!--class name="XglRotationGroup"/-->
+            <class name="Test1"/>
+            <class name="BillingSubmission_Permission"/>
         </classes>
     </test>
 </suite>

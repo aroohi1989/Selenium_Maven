@@ -5,6 +5,7 @@
     import io.github.bonigarcia.wdm.WebDriverManager;
     import org.testng.Assert;
     import org.testng.annotations.AfterClass;
+    import org.testng.annotations.Parameters;
     import org.testng.annotations.Test;
 
     import java.time.Duration;
@@ -47,7 +48,8 @@
             //driver.quit();
             this.driver=driver;
         }
-        @Test(priority = 4)
+
+        @Test(priority = 4, enabled = false)
         public void menuItems()
         {
             SeleniumTest1 st=new SeleniumTest1();
