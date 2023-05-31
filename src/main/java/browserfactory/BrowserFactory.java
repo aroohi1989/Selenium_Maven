@@ -34,7 +34,7 @@ public class BrowserFactory extends BaseClass
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
         driver.get(applicationURL);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
         return driver;
     }
 }

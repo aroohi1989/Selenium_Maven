@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="listners.ExtentTestNGITestListener"></listener>
+    </listeners>
+
+    <!--test name="QA2">
+        <parameter name="username" value="Admin"></parameter>
+        <parameter name="password" value="admin123"></parameter>
+        <parameter name="browser" value="Chrome"></parameter>
+        <classes>
+            <class name="SeleniumTest1">
+            <class name="SeleniumTest2"/>
+        </classes>
+    </test-->
+    <!--test name="XGL">
+        <parameter name="username" value="DBI"></parameter>
+        <parameter name="password" value="Abcd1234"></parameter>
+        <parameter name="URL" value="http://10.7.30.134/xGLinear/login.html"></parameter>
+        <parameter name="Version" value="xGLinear 2.5.3"></parameter>
+        <parameter name="browser" value="Chrome"></parameter>
+        <classes>
+            <class name="Test1"/>
+            <class name="BillingSubmission_Permission"/>
+        </classes>
+    </test-->
+    <test name="XGL2">
+        <parameter name="username" value="ASA"></parameter>
+        <parameter name="password" value="Abcd1234"></parameter>
+        <parameter name="URL" value="https://qa134.myimagine.com/xGLinear/login.html"></parameter>
+        <parameter name="Version" value="xGLinear 2.5.3"></parameter>
+        <parameter name="browser" value="Chrome"></parameter>
+        <parameter name="inventorytype" value="DEFAULT | Default (unallocated)Inventory"></parameter>
+        <classes>
+            <class name="XGLT_15177"/>
+            <!--class name="Create_Network"/-->
+            <!--class name="Network_programbreakformat"/-->
+        </classes>
+    </test>
+    <!--test name="HRM test">
+        <parameter name="username" value="Admin"></parameter>
+        <parameter name="password" value="admin123"></parameter>
+        <parameter name="URL" value="https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"></parameter>
+        <parameter name="browser" value="Chrome"></parameter>
+        <classes>
+        </classes>
+    </test-->
+</suite>

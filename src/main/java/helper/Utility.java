@@ -11,10 +11,21 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Base64;
 import java.util.Date;
+import java.util.Random;
 
 public class Utility
 {
-    public String getCurrentTime()
+    public static String captureScreenshotInBase64(WebDriver driver)
+    {
+        TakesScreenshot ts=(TakesScreenshot)driver;
+
+        String base64=ts.getScreenshotAs(OutputType.BASE64);
+
+        return base64;
+
+
+    }
+    public static String getCurrentTime()
     {
         String date;
         date= new SimpleDateFormat("yyyy-MM-ddHH:mm:ss.S").format(new Date());
@@ -38,5 +49,21 @@ public class Utility
             System.out.println("Something went wrong "+e.getMessage());
         }
 
+    }
+    public String randomAlphaNumeric(int len)
+    {
+        String characters="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        Random rand = new Random();
+        StringBuilder builder = new StringBuilder();
+        for(int i=0; i<len;i++)
+        {
+            // generate a random index in the range of the characters string
+            int index = rand.nextInt(characters.length());
+            // extract the character at the generated index and append it to the StringBuilder
+            char c = characters.charAt(index);
+            builder.append(c);
+        }
+        String code = builder.toString();
+        return code;
     }
 }

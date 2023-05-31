@@ -3,19 +3,24 @@ package pages;
 import base.BaseClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.Reporter;
 import org.testng.asserts.SoftAssert;
 
 public class Prebilling_processing extends BaseClass
 {
-    public void Prebilling_processing(WebDriver driver)
+    public  Prebilling_processing(WebDriver driver)
     {
         this.driver=driver;
+        PageFactory.initElements(driver, this);
     }
 
     // Locators
-    By Recon = By.xpath("//div[@id='header.menuReconciliation']");
+    @FindBy(xpath = "//div[@id='header.menuReconciliation']")
+    public WebElement Recon;
+    //By Recon = By.xpath("//div[@id='header.menuReconciliation']");
     By Pre_billing = By.xpath("//div[@id='header.subMenuPreInvoiceProcessing']");
     By DAT =By.xpath("//div//p[contains(text(),'Discrepancy Analysis')]");
     By DAT_Analyse=By.xpath("//div//button[contains(text(),'Analyze')]");
@@ -26,7 +31,7 @@ public class Prebilling_processing extends BaseClass
 
     public boolean test_privilege(String Cat, String Priv, String Grant)
     {
-        Boolean flag=false;
+        boolean flag=false;
         SoftAssert sa = new SoftAssert();
         //Recon
         if(Cat.equalsIgnoreCase("Reconciliation"))
@@ -35,18 +40,18 @@ public class Prebilling_processing extends BaseClass
             {
                 if(Grant.equalsIgnoreCase("Y"))
                 {
-                    flag = driver.findElement(Recon).isDisplayed();
-                    sa.assertTrue(driver.findElement(Recon).isDisplayed(), "Reconciliation is displayed");
-                    sa.assertEquals(driver.findElement(Recon).isEnabled(), "Reconciliation is enabled");
+                    flag = Recon.isDisplayed();
+                    sa.assertTrue(Recon.isDisplayed(), "Reconciliation is displayed");
+                    sa.assertEquals(Recon.isEnabled(), "Reconciliation is enabled");
                 }
                 else if(Grant.equalsIgnoreCase("N"))
                 {
-                    flag=!(driver.findElement(Recon).isDisplayed());
+                    flag=!(Recon.isDisplayed());
                 }
             }
         }
 
-        driver.findElement(Recon).click();
+        Recon.click();
         driver.findElement(Pre_billing).click();
         if(Cat.equalsIgnoreCase("Pre-Billing Processing") && Grant.equalsIgnoreCase("Y"))
         {

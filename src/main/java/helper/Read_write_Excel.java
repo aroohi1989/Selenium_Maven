@@ -1,9 +1,9 @@
 package helper;
 
-import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.WebDriver;
 import pages.Prebilling_processing;
 
 import java.io.File;
@@ -12,9 +12,6 @@ import java.io.FileOutputStream;
 
 public class Read_write_Excel
 {
-    static String uname;
-    static String pwd;
-    static XSSFWorkbook wb;
     public void read_users() throws Exception
     {
         File src= new File("C:\\Users\\dP-PL\\LearnMaven\\LearnMaven\\testdata\\Permissions.xlsx");
@@ -32,15 +29,16 @@ public class Read_write_Excel
         wb.close();
     }
 
-    public void read_DBI_Permission() throws Exception
+    public void read_DBI_Permission(String uname, WebDriver driver) throws Exception
     {
-        Boolean result;
-        Prebilling_processing PB= new Prebilling_processing();
+        boolean result;
+        Prebilling_processing PB= new Prebilling_processing(driver);
         File src= new File("C:\\Users\\dP-PL\\LearnMaven\\LearnMaven\\testdata\\DBI.xlsx");
         FileInputStream fis = new FileInputStream(src);
         XSSFWorkbook wb = new XSSFWorkbook(fis);
         System.out.println("************ Loading Data From Excel *******************");
-        XSSFSheet st=wb.getSheet("DBI");
+        XSSFSheet st=wb.getSheet(uname);
+
         int i =st.getLastRowNum();
         System.out.println("Number of rows are"+i);
         for(int j=1;j<=i;j++)
@@ -51,7 +49,7 @@ public class Read_write_Excel
             System.out.println( " Category is " +Category+"Privilege is" +Privilege+ "Granted is " +Granted);
             result=PB.test_privilege(Category, Privilege, Granted);
             XSSFCell cell = st.getRow(j).createCell(3);
-            if(result==true)
+            if(result)
             {
                 cell.setCellValue("Pass");
             }
@@ -59,7 +57,7 @@ public class Read_write_Excel
             {
                 cell.setCellValue("Fail");
             }
-            FileOutputStream outputStream = new FileOutputStream("C:\\Users\\dP-PL\\LearnMaven\\LearnMaven\\testdata\\DBI.xlsx");
+            FileOutputStream outputStream = new FileOutputStream("C:\\Users\\dP-PL\\LearnMaven\\LearnMaven\\testdata\\"+uname+".xlsx");
             wb.write(outputStream);
         }
         wb.close();

@@ -6,6 +6,8 @@ import org.testng.annotations.Test;
 
 import java.lang.reflect.Method;
 
+import static base.BaseClass.driver;
+
 public class BillingSubmission_Permission
 {
     public String testName;
@@ -30,12 +32,12 @@ public class BillingSubmission_Permission
 
     }
     @Test(priority = 2)
-    @Parameters
-    public void test_billing_permission()
+    @Parameters({"username"})
+    public void test_billing_permission(String username)
     {
         Read_write_Excel rd= new Read_write_Excel();
         try {
-            rd.read_DBI_Permission();
+            rd.read_DBI_Permission(username,driver);
         }
         catch (Exception e)
         {
