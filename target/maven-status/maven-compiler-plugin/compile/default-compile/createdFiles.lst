@@ -1,5 +1,7 @@
+dataProvider\CustomDataProvider.class
 helper\Read_write_Excel.class
 base\BaseClass.class
+dataProvider\ConfigReader.class
 pages\LoginPage.class
 pages\AboutPage.class
 pages\OrangeHRM_login.class
@@ -11,3 +13,4 @@ listners\ExtentManager.class
 pages\Network_programbreakformatPage.class
 pages\Prebilling_processing.class
 listners\MyListener.class
+dataProvider\ExcelReader.class

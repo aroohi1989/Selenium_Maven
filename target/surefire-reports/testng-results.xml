@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
     <line>
       <![CDATA[Pass: Login Successfull]]>
@@ -14,47 +14,36 @@
       <![CDATA[ Channel Count ChannelCount: 556, HeadendCount=73]]>
     </line>
     <line>
-      <![CDATA[ Build Info develop | ID=3c11655 f0 @ 05/18/23 11:01 PM]]>
+      <![CDATA[ Build Info develop | ID=a32af16 c6 @ 06/15/23 06:41 AM]]>
     </line>
     <line>
-      <![CDATA[ Package Info xGLinear 2.5.3 Azure Build at 05/18/2023 23:07:49]]>
+      <![CDATA[ Package Info xGLinear 2.5.3 Azure Build at 06/15/2023 06:48:17]]>
     </line>
     <line>
       <![CDATA[Pass: About information read]]>
     </line>
   </reporter-output>
-  <suite started-at="2023-05-30T20:30:31 IST" name="All Test Suite" finished-at="2023-05-30T20:30:46 IST" duration-ms="15040">
+  <suite started-at="2023-06-15T20:34:48 IST" name="All Test Suite" finished-at="2023-06-15T20:35:07 IST" duration-ms="19025">
     <groups>
     </groups>
-    <test started-at="2023-05-30T20:30:31 IST" name="XGL2" finished-at="2023-05-30T20:30:46 IST" duration-ms="15040">
+    <test started-at="2023-06-15T20:34:48 IST" name="XGL2" finished-at="2023-06-15T20:35:07 IST" duration-ms="19025">
       <class name="XGLT_15177">
-        <test-method is-config="true" signature="setupLog4j()[pri:0, instance:XGLT_15177@77307458]" started-at="2023-05-30T20:30:31 IST" name="setupLog4j" finished-at="2023-05-30T20:30:31 IST" duration-ms="8" status="PASS">
+        <test-method is-config="true" signature="setupLog4j()[pri:0, instance:XGLT_15177@77307458]" started-at="2023-06-15T20:34:48 IST" name="setupLog4j" finished-at="2023-06-15T20:34:48 IST" duration-ms="10" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupLog4j -->
-        <test-method is-config="true" signature="name(org.testng.ITestContext)[pri:0, instance:XGLT_15177@77307458]" started-at="2023-05-30T20:30:31 IST" name="name" finished-at="2023-05-30T20:30:31 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="name(org.testng.ITestContext)[pri:0, instance:XGLT_15177@77307458]" started-at="2023-06-15T20:34:48 IST" name="name" finished-at="2023-06-15T20:34:48 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@7364eed1]]>
+                <![CDATA[org.testng.TestRunner@2a8f8555]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- name -->
-        <test-method is-config="true" signature="handleTestMethodName(java.lang.reflect.Method)[pri:0, instance:XGLT_15177@77307458]" started-at="2023-05-30T20:30:31 IST" name="handleTestMethodName" finished-at="2023-05-30T20:30:31 IST" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void XGLT_15177.LoginXGL(java.lang.String,java.lang.String,java.lang.String,java.lang.String)]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- handleTestMethodName -->
-        <test-method signature="LoginXGL(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:XGLT_15177@77307458]" started-at="2023-05-30T20:30:31 IST" name="LoginXGL" finished-at="2023-05-30T20:30:44 IST" duration-ms="12760" status="PASS">
+        <test-method signature="LoginXGL(java.lang.String,java.lang.String)[pri:1, instance:XGLT_15177@77307458]" started-at="2023-06-15T20:34:48 IST" name="LoginXGL" data-provider="loginDetails" finished-at="2023-06-15T20:35:04 IST" duration-ms="15758" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -66,16 +55,6 @@
                 <![CDATA[Abcd1234]]>
               </value>
             </param>
-            <param index="2">
-              <value>
-                <![CDATA[https://qa134.myimagine.com/xGLinear/login.html]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Chrome]]>
-              </value>
-            </param>
           </params>
           <reporter-output>
             <line>
@@ -83,36 +62,29 @@
             </line>
           </reporter-output>
         </test-method> <!-- LoginXGL -->
-        <test-method is-config="true" signature="name(org.testng.ITestContext)[pri:0, instance:XGLT_15177@77307458]" started-at="2023-05-30T20:30:44 IST" name="name" finished-at="2023-05-30T20:30:44 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="handleTestMethodName(java.lang.reflect.Method)[pri:0, instance:XGLT_15177@77307458]" started-at="2023-06-15T20:34:48 IST" name="handleTestMethodName" finished-at="2023-06-15T20:34:48 IST" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@7364eed1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- name -->
-        <test-method is-config="true" signature="handleTestMethodName(java.lang.reflect.Method)[pri:0, instance:XGLT_15177@77307458]" started-at="2023-05-30T20:30:44 IST" name="handleTestMethodName" finished-at="2023-05-30T20:30:44 IST" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void XGLT_15177.About(java.lang.String)]]>
+                <![CDATA[public void XGLT_15177.LoginXGL(java.lang.String,java.lang.String)]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- handleTestMethodName -->
-        <test-method signature="About(java.lang.String)[pri:2, instance:XGLT_15177@77307458]" started-at="2023-05-30T20:30:44 IST" name="About" finished-at="2023-05-30T20:30:46 IST" depends-on-methods="XGLT_15177.LoginXGL" duration-ms="1729" status="PASS">
+        <test-method is-config="true" signature="name(org.testng.ITestContext)[pri:0, instance:XGLT_15177@77307458]" started-at="2023-06-15T20:35:04 IST" name="name" finished-at="2023-06-15T20:35:04 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[xGLinear 2.5.3]]>
+                <![CDATA[org.testng.TestRunner@2a8f8555]]>
               </value>
             </param>
           </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- name -->
+        <test-method signature="About()[pri:2, instance:XGLT_15177@77307458]" started-at="2023-06-15T20:35:04 IST" name="About" finished-at="2023-06-15T20:35:05 IST" depends-on-methods="XGLT_15177.LoginXGL" duration-ms="1051" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[ Instance QA134-PS xGL DB]]>
@@ -124,17 +96,86 @@
               <![CDATA[ Channel Count ChannelCount: 556, HeadendCount=73]]>
             </line>
             <line>
-              <![CDATA[ Build Info develop | ID=3c11655 f0 @ 05/18/23 11:01 PM]]>
+              <![CDATA[ Build Info develop | ID=a32af16 c6 @ 06/15/23 06:41 AM]]>
             </line>
             <line>
-              <![CDATA[ Package Info xGLinear 2.5.3 Azure Build at 05/18/2023 23:07:49]]>
+              <![CDATA[ Package Info xGLinear 2.5.3 Azure Build at 06/15/2023 06:48:17]]>
             </line>
             <line>
               <![CDATA[Pass: About information read]]>
             </line>
           </reporter-output>
         </test-method> <!-- About -->
+        <test-method is-config="true" signature="handleTestMethodName(java.lang.reflect.Method)[pri:0, instance:XGLT_15177@77307458]" started-at="2023-06-15T20:35:04 IST" name="handleTestMethodName" finished-at="2023-06-15T20:35:04 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void XGLT_15177.About()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- handleTestMethodName -->
       </class> <!-- XGLT_15177 -->
+      <class name="Create_Network">
+        <test-method is-config="true" signature="setupLog4j()[pri:0, instance:Create_Network@29cfd92b]" started-at="2023-06-15T20:35:05 IST" name="setupLog4j" finished-at="2023-06-15T20:35:05 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupLog4j -->
+        <test-method is-config="true" signature="name(org.testng.ITestContext)[pri:0, instance:Create_Network@29cfd92b]" started-at="2023-06-15T20:35:05 IST" name="name" finished-at="2023-06-15T20:35:05 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@2a8f8555]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- name -->
+        <test-method signature="search_Network()[pri:1, instance:Create_Network@29cfd92b]" started-at="2023-06-15T20:35:05 IST" name="search_Network" finished-at="2023-06-15T20:35:06 IST" duration-ms="726" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- search_Network -->
+        <test-method is-config="true" signature="handleTestMethodName(java.lang.reflect.Method)[pri:0, instance:Create_Network@29cfd92b]" started-at="2023-06-15T20:35:05 IST" name="handleTestMethodName" finished-at="2023-06-15T20:35:05 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void Create_Network.search_Network()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- handleTestMethodName -->
+        <test-method signature="create_Network()[pri:2, instance:Create_Network@29cfd92b]" started-at="2023-06-15T20:35:06 IST" name="create_Network" finished-at="2023-06-15T20:35:06 IST" depends-on-methods="Create_Network.search_Network" duration-ms="302" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- create_Network -->
+        <test-method is-config="true" signature="handleTestMethodName(java.lang.reflect.Method)[pri:0, instance:Create_Network@29cfd92b]" started-at="2023-06-15T20:35:06 IST" name="handleTestMethodName" finished-at="2023-06-15T20:35:06 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void Create_Network.create_Network()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- handleTestMethodName -->
+        <test-method is-config="true" signature="name(org.testng.ITestContext)[pri:0, instance:Create_Network@29cfd92b]" started-at="2023-06-15T20:35:06 IST" name="name" finished-at="2023-06-15T20:35:06 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@2a8f8555]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- name -->
+      </class> <!-- Create_Network -->
     </test> <!-- XGL2 -->
   </suite> <!-- All Test Suite -->
 </testng-results>

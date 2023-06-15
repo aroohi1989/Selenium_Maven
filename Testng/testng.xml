@@ -34,7 +34,7 @@
         <parameter name="inventorytype" value="DEFAULT | Default (unallocated)Inventory"></parameter>
         <classes>
             <class name="XGLT_15177"/>
-            <!--class name="Create_Network"/-->
+            <class name="Create_Network"/>
             <!--class name="Network_programbreakformat"/-->
         </classes>
     </test>

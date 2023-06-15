@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">4 methods,   4 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,12 +103,22 @@
                     <div class="method-list-content passed suite-All_Test_Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-All_Test_Suite" title="XGLT_15177" class="method navigator-link" hash-for-method="About(xGLinear 2.5.3)">About(xGLinear 2.5.3)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-All_Test_Suite" title="XGLT_15177" class="method navigator-link" hash-for-method="About">About</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-All_Test_Suite" title="XGLT_15177" class="method navigator-link" hash-for-method="LoginXGL(ASA, Abcd1234, https://qa134.myimagine.com/xGLinear/login.html, Chrome)">LoginXGL(ASA, Abcd1234, https://qa134.myimagine.com/xGLinear/login.html, Chrome)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-All_Test_Suite" title="XGLT_15177" class="method navigator-link" hash-for-method="LoginXGL(ASA, Abcd1234)">LoginXGL(ASA, Abcd1234)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-All_Test_Suite" title="Create_Network" class="method navigator-link" hash-for-method="create_Network">create_Network</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-All_Test_Suite" title="Create_Network" class="method navigator-link" hash-for-method="search_Network">search_Network</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-All_Test_Suite -->
@@ -131,18 +141,39 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="About(xGLinear 2.5.3)">
-                  </a> <!-- About(xGLinear 2.5.3) -->
+                  <a name="About">
+                  </a> <!-- About -->
                   <span class="method-name">About</span>
-                  <span class="parameters">(xGLinear 2.5.3)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="LoginXGL(ASA, Abcd1234, https://qa134.myimagine.com/xGLinear/login.html, Chrome)">
-                  </a> <!-- LoginXGL(ASA, Abcd1234, https://qa134.myimagine.com/xGLinear/login.html, Chrome) -->
+                  <a name="LoginXGL(ASA, Abcd1234)">
+                  </a> <!-- LoginXGL(ASA, Abcd1234) -->
                   <span class="method-name">LoginXGL</span>
-                  <span class="parameters">(ASA,Abcd1234,https://qa134.myimagine.com/xGLinear/login.html,Chrome)</span>
+                  <span class="parameters">(ASA,Abcd1234)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-All_Test_Suite-class-passed -->
+          <div class="suite-All_Test_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">Create_Network</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="create_Network">
+                  </a> <!-- create_Network -->
+                  <span class="method-name">create_Network</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="search_Network">
+                  </a> <!-- search_Network -->
+                  <span class="method-name">search_Network</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -169,6 +200,7 @@
     &lt;parameter name=&quot;username&quot; value=&quot;ASA&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;XGLT_15177&quot;/&gt;
+      &lt;class name=&quot;Create_Network&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- XGL2 --&gt;
 &lt;/suite&gt; &lt;!-- All Test Suite --&gt;
@@ -182,7 +214,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">XGL2 (1 class)</span>
+                <span class="test-name">XGL2 (2 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -208,20 +240,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(4);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'LoginXGL')
 data.setCell(0, 2, 'XGLT_15177')
-data.setCell(0, 3, 12455);
+data.setCell(0, 3, 15758);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'About')
 data.setCell(1, 2, 'XGLT_15177')
-data.setCell(1, 3, 2323);
+data.setCell(1, 3, 1051);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'search_Network')
+data.setCell(2, 2, 'Create_Network')
+data.setCell(2, 3, 726);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'create_Network')
+data.setCell(3, 2, 'Create_Network')
+data.setCell(3, 3, 302);
 window.suiteTableData['All_Test_Suite']= { tableData: data, tableDiv: 'times-div-All_Test_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 14 seconds</span>
+              <span class="suite-total-time">Total running time: 17 seconds</span>
               <div id="times-div-All_Test_Suite">
               </div> <!-- times-div-All_Test_Suite -->
             </div> <!-- times-div -->
@@ -233,20 +273,20 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="reporter-method-div">
-              <span class="reporter-method-name">LoginXGL(ASA, Abcd1234, https://qa134.myimagine.com/xGLinear/login.html, Chrome)</span>
-              <div class="reporter-method-output-div">
-                <span class="reporter-method-output">Pass: Login Successfull</span>
-              </div> <!-- reporter-method-output-div -->
-            </div> <!-- reporter-method-div -->
-            <div class="reporter-method-div">
-              <span class="reporter-method-name">About(xGLinear 2.5.3)</span>
+              <span class="reporter-method-name">About</span>
               <div class="reporter-method-output-div">
                 <span class="reporter-method-output"> Instance QA134-PS xGL DB</span>
                 <span class="reporter-method-output"> Data Service 10.7.30.164:1521/xgldb</span>
                 <span class="reporter-method-output"> Channel Count ChannelCount: 556, HeadendCount=73</span>
-                <span class="reporter-method-output"> Build Info develop | ID=3c11655 f0 @ 05/18/23 11:01 PM</span>
-                <span class="reporter-method-output"> Package Info xGLinear 2.5.3 Azure Build at 05/18/2023 23:07:49</span>
+                <span class="reporter-method-output"> Build Info develop | ID=a32af16 c6 @ 06/15/23 06:41 AM</span>
+                <span class="reporter-method-output"> Package Info xGLinear 2.5.3 Azure Build at 06/15/2023 06:48:17</span>
                 <span class="reporter-method-output">Pass: About information read</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">LoginXGL(ASA, Abcd1234)</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">Pass: Login Successfull</span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -270,28 +310,59 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
-                <span class="method-name">name(org.testng.TestRunner@5eabff6b)</span>
-                <span class="method-start">20 ms</span>
+                <span class="method-name">name(org.testng.TestRunner@2a8f8555)</span>
+                <span class="method-start">533 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
-                <span class="method-name">handleTestMethodName(public void XGLT_15177.LoginXGL(java.lang.String,java.lang.String,java.lang.String,java.lang.String))</span>
-                <span class="method-start">22 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">LoginXGL(ASA, Abcd1234, https://qa134.myimagine.com/xGLinear/login.html, Chrome)</span>
-                <span class="method-start">23 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method before">
-                <span class="method-name">name(org.testng.TestRunner@5eabff6b)</span>
-                <span class="method-start">12638 ms</span>
+                <span class="method-name">handleTestMethodName(public void XGLT_15177.LoginXGL(java.lang.String,java.lang.String))</span>
+                <span class="method-start">535 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">About(xGLinear 2.5.3)</span>
-                <span class="method-start">12639 ms</span>
+                <span class="method-name">LoginXGL(ASA, Abcd1234)</span>
+                <span class="method-start">535 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
-                <span class="method-name">handleTestMethodName(public void XGLT_15177.About(java.lang.String))</span>
-                <span class="method-start">12639 ms</span>
+                <span class="method-name">name(org.testng.TestRunner@2a8f8555)</span>
+                <span class="method-start">16471 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">About</span>
+                <span class="method-start">16472 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">handleTestMethodName(public void XGLT_15177.About())</span>
+                <span class="method-start">16472 ms</span>
+              </div> <!-- configuration-method before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">Create_Network</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setupLog4j</span>
+                <span class="method-start">17705 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-method before">
+                <span class="method-name">name(org.testng.TestRunner@2a8f8555)</span>
+                <span class="method-start">17706 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">search_Network</span>
+                <span class="method-start">17707 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">handleTestMethodName(public void Create_Network.search_Network())</span>
+                <span class="method-start">17707 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">create_Network</span>
+                <span class="method-start">18558 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">handleTestMethodName(public void Create_Network.create_Network())</span>
+                <span class="method-start">18558 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">name(org.testng.TestRunner@2a8f8555)</span>
+                <span class="method-start">18558 ms</span>
               </div> <!-- configuration-method before -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

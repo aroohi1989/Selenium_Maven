@@ -3,6 +3,7 @@ package base;
 import browserfactory.BrowserFactory;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import dataProvider.ConfigReader;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -27,19 +28,21 @@ public class BaseClass
     public void setupLog4j() {
         // Configure Log4j
         System.out.println("I am in setuplog4j");
-        System.setProperty("log4j.configurationFile", "C:\\Users\\dP-PL\\LearnMaven\\LearnMaven\\src\\test\\resources\\log4j2.xml");
+        System.setProperty("log4j.configurationFile", System.getProperty("user.dir")+"/src/test/resources/log4j2.xml");
     }
-  @Parameters({"browser","URL"})
-  public void setupBrowser(String browser, String URL)
+  //@Parameters({"browser","URL"})
+    String browser=ConfigReader.getProperty("browser");
+    String url=ConfigReader.getProperty("url");
+  public void setupBrowser()
   {
 
       System.out.println("LOG:INFO - Setting up browser");
       BrowserFactory bf= new BrowserFactory();
-      driver=bf.startBrowser(browser,URL);
+      driver=bf.startBrowser(ConfigReader.getProperty("browser"),ConfigReader.getProperty("url"));
       //return driver;
   }
 
-    //@AfterSuite
+    @AfterSuite
     public void closeBrowser()
     {
         driver.quit();

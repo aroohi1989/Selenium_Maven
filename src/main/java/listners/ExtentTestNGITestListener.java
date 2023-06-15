@@ -39,7 +39,7 @@ public class ExtentTestNGITestListener implements ITestListener {
     }
 
 
-    public void onTestFailure(ITestResult result)
+    /*public void onTestFailure(ITestResult result)
     {
         logger.error("Test case failed: " + result.getName());
         WebDriver driver=BrowserFactory.getBrowserInstance();
@@ -47,7 +47,7 @@ public class ExtentTestNGITestListener implements ITestListener {
         String base64=Utility.captureScreenshotInBase64(driver);
 
         parentTest.get().fail("Test Failed "+result.getThrowable().getMessage(),MediaEntityBuilder.createScreenCaptureFromBase64String(base64).build());
-    }
+    }*/
 
     public void onTestSkipped(ITestResult result) {
         parentTest.get().skip("Test Skipped "+result.getThrowable().getMessage());
