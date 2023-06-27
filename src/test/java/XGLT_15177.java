@@ -29,6 +29,7 @@ public class XGLT_15177 extends BaseClass
     @Test(priority = 1,dataProvider = "loginDetails",dataProviderClass = CustomDataProvider.class)
     public void LoginXGL(String uname, String pwrd)
     {
+        errorLog.error("This is an error message specifically logged to the error log file");
         logger.info("Test XGLT_15177");
         test.info("Step 1: Navigate to XGL");
          //login to XGL

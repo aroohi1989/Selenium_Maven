@@ -1,10 +1,7 @@
 package pages;
 
 import base.BaseClass;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -55,6 +52,15 @@ public class Network_programbreakformatPage extends BaseClass
     @FindBy(xpath = "//div[@id='breadCrumbs.crumb2']")
     WebElement new_break_format;
 
+    @FindBy(xpath = "//div[@class='popupWindowContent defDecorFrame']")
+    WebElement popup_save_confirm;
+
+    @FindBy(xpath = "//div[@class='popupWindowBody']/div")
+    WebElement popupWindowBody;
+
+    @FindBy(xpath = "//div[@class='popupWindowButtons buttonsArea']/button")
+     WebElement popup_yes;
+
     public String create_break_format(String net,String choice)
     {
         String title=net+"_BF";
@@ -63,17 +69,31 @@ public class Network_programbreakformatPage extends BaseClass
         System.out.println("After");
         JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
         //jsExecutor.executeScript("arguments[0].style.height = 'auto'; arguments[0].style.visibility = 'visible';", program_break_format);
-        jsExecutor.executeScript("arguments[0].style.height = '200px';", program_break_format);
-        driver.navigate().refresh();
-        String elementHeight = (String) jsExecutor.executeScript("return arguments[0].style.height;", program_break_format);
-        System.out.println("Element height: " + elementHeight);
-        System.out.println(program_break_format.getCssValue("height"));
+        try {
+            jsExecutor.executeScript("arguments[0].style.height = '200px';", program_break_format);
+            String elementHeight = (String) jsExecutor.executeScript("return arguments[0].style.height;", program_break_format);
+            System.out.println("Element height: " + elementHeight);
+            System.out.println(program_break_format.getCssValue("height"));
+            program_break_format.click();
+        }
+        catch(ElementNotInteractableException e)
+        {
+            jsExecutor.executeScript("arguments[0].style.height = '200px';", program_break_format);
+            program_break_format.click();
+        }
+        catch(StaleElementReferenceException e)
+        {
+            driver.navigate().refresh();
+            WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+            wait.until(ExpectedConditions.elementToBeClickable(program_break_format));
+            program_break_format= driver.findElement(By.xpath("//div[@id='NetworkEntity.BreakFormats']"));
+            program_break_format.click();
+
+        }
+        handle_Popup();
      //   System.out.println(program_break_format.getCssValue("width"));
 
-        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(20));
-        wait.until(ExpectedConditions.elementToBeClickable(program_break_format));
 
-        program_break_format.click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         program_break_add.click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
@@ -106,6 +126,24 @@ public class Network_programbreakformatPage extends BaseClass
         System.out.println(new_break_format.getAttribute("innerHTML"));
         Assert.assertTrue(new_break_format.isDisplayed());
         return title;
+    }
+
+    public void handle_Popup()
+    {
+        try{
+            if(popup_save_confirm.isDisplayed())
+            {
+                if(popupWindowBody.getText().contains("Would you like to save your changes?"))
+                {
+                    driver.navigate().refresh();
+                    popup_yes.click();
+                }
+            }
+        }
+        catch(NoSuchElementException e)
+        {
+            return;
+        }
     }
 
 }

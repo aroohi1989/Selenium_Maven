@@ -1,7 +1,6 @@
 import base.BaseClass;
 import com.aventstack.extentreports.ExtentTest;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
+import dataProvider.ConfigReader;
 import org.testng.Reporter;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
@@ -9,7 +8,6 @@ import org.testng.annotations.Test;
 import pages.Network_programbreakformatPage;
 
 import java.lang.reflect.Method;
-import java.time.Duration;
 
 import static listners.ExtentManager.extent;
 
@@ -31,7 +29,7 @@ public class Network_programbreakformat extends BaseClass
     {
         Network_programbreakformatPage bf= new Network_programbreakformatPage(driver);
 
-        break_format=bf.create_break_format(Network,invtype);
+        break_format=bf.create_break_format(Network, ConfigReader.getProperty("inventorytype"));
 
         Reporter.log("Program Break format created "+break_format);
 

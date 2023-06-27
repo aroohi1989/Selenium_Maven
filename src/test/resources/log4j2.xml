@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="WARN">
+<Configuration status="INFO">
     <Appenders>
-        <!-- Add an appender for freemarker.cache -->
         <Console name="Console" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+            <PatternLayout pattern="%d [%t] %-5level %logger{36} - %msg%n"/>
         </Console>
-        <File name="LogFile" fileName="C:\Users\dP-PL\LearnMaven\LearnMaven\configs\log4j\app.log">
-            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+
+        <File name="ErrorFile" fileName="configs/log4j/logs.log">
+            <PatternLayout pattern="%d [%t] %-5level %logger{36} - %msg%n"/>
         </File>
     </Appenders>
+
     <Loggers>
-        <!-- Set the level and assign the appender to the freemarker.cache logger -->
-        <Logger name="freemarker.cache" level="info" additivity="false">
+        <Root level="INFO">
             <AppenderRef ref="Console"/>
-            <AppenderRef ref="LogFile"/>
-        </Logger>
-        <Root level="info">
-            <AppenderRef ref="Console"/>
+            <AppenderRef ref="ErrorFile"/>
         </Root>
+
+        <Logger name="LearnMaven" level="error" additivity="false">
+            <AppenderRef ref="ErrorFile"/>
+        </Logger>
     </Loggers>
 </Configuration>

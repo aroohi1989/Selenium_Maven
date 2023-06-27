@@ -1,20 +1,20 @@
 package base;
 
 import browserfactory.BrowserFactory;
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
 import dataProvider.ConfigReader;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.ITestContext;
-import org.testng.annotations.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.core.config.Configurator;
+import org.openqa.selenium.WebDriver;
+import org.testng.ITestContext;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 
-import java.time.Duration;
+import java.net.URISyntaxException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+
 
 public class BaseClass
 {
@@ -23,12 +23,15 @@ public class BaseClass
   public static String break_format;
 
     public static final Logger logger = LogManager.getLogger(BaseClass.class);
+    protected static org.apache.logging.log4j.Logger log;
+    protected static Logger errorLog;
 
-    @BeforeClass
-    public void setupLog4j() {
-        // Configure Log4j
-        System.out.println("I am in setuplog4j");
-        System.setProperty("log4j.configurationFile", System.getProperty("user.dir")+"/src/test/resources/log4j2.xml");
+    @BeforeSuite
+    public void setupLog4j() throws URISyntaxException{
+            Path log4jConfigPath = Paths.get(getClass().getClassLoader().getResource("log4j2.xml").toURI());
+            Configurator.initialize("Log4j2", null, log4jConfigPath.toUri());
+            log = LogManager.getLogger(getClass());
+            errorLog = LogManager.getLogger("LearnMaven");
     }
   //@Parameters({"browser","URL"})
     String browser=ConfigReader.getProperty("browser");
@@ -36,15 +39,17 @@ public class BaseClass
   public void setupBrowser()
   {
 
+        log.info("Setting up browser");
       System.out.println("LOG:INFO - Setting up browser");
       BrowserFactory bf= new BrowserFactory();
       driver=bf.startBrowser(ConfigReader.getProperty("browser"),ConfigReader.getProperty("url"));
       //return driver;
   }
 
-    @AfterSuite
+    //@AfterSuite
     public void closeBrowser()
     {
+        log.info("closing up browser");
         driver.quit();
 
         System.out.println("LOG:INFO - Closing the browser and application");
