@@ -1,6 +1,7 @@
 import base.BaseClass;
 import com.aventstack.extentreports.ExtentTest;
 import dataProvider.ConfigReader;
+import helper.ExceptionHandling;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.ImportSchedulePage;
@@ -31,7 +32,8 @@ public class Import_Schedules extends BaseClass
         }
         catch (AWTException e)
         {
-            System.out.println("Some error occured During schedule import ");
+            ExceptionHandling.handleAWTException(e);
+            System.out.println("Some error occurred during schedule import ");
         }
 
     }

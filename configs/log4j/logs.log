@@ -26,3 +26,59 @@ java.nio.file.FileAlreadyExistsException: C:\Users\dP-PL\LearnMaven\LearnMaven\t
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169) [surefire-booter-3.0.0-M7.jar:3.0.0-M7]
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595) [surefire-booter-3.0.0-M7.jar:3.0.0-M7]
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581) [surefire-booter-3.0.0-M7.jar:3.0.0-M7]
+2023-07-04 14:50:47,493 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\dP-PL\LearnMaven\LearnMaven\Testng\testng.xml
+
+2023-07-04 14:50:49,205 [main] ERROR LearnMaven - This is an error message specifically logged to the error log file
+2023-07-04 14:50:49,206 [main] INFO  base.BaseClass - Test XGLT_15177
+2023-07-04 14:50:49,206 [main] INFO  XGLT_15177 - Setting up browser
+2023-07-04 14:50:58,842 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 114.0.5735.90 (resolved driver for Chrome 114)
+2023-07-04 14:50:59,057 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\dP-PL\.cache\selenium\chromedriver\win32\114.0.5735.90\chromedriver.exe
+2023-07-04 15:04:53,726 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\dP-PL\LearnMaven\LearnMaven\Testng\testng.xml
+
+2023-07-04 15:04:56,523 [main] ERROR LearnMaven - This is an error message specifically logged to the error log file
+2023-07-04 15:04:56,524 [main] INFO  base.BaseClass - Test XGLT_15177
+2023-07-04 15:04:56,524 [main] INFO  XGLT_15177 - Setting up browser
+2023-07-04 15:04:58,538 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 114.0.5735.90 (resolved driver for Chrome 114)
+2023-07-04 15:04:58,817 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\dP-PL\.cache\selenium\chromedriver\win32\114.0.5735.90\chromedriver.exe
+2023-07-04 15:17:53,540 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\dP-PL\LearnMaven\LearnMaven\Testng\testng.xml
+
+2023-07-04 15:17:54,911 [main] ERROR LearnMaven - This is an error message specifically logged to the error log file
+2023-07-04 15:17:54,911 [main] INFO  base.BaseClass - Test XGLT_15177
+2023-07-04 15:17:54,911 [main] INFO  XGLT_15177 - Setting up browser
+2023-07-04 15:17:55,649 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 114.0.5735.90 (resolved driver for Chrome 114)
+2023-07-04 15:17:55,694 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\dP-PL\.cache\selenium\chromedriver\win32\114.0.5735.90\chromedriver.exe
+2023-07-04 15:21:58,251 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\dP-PL\LearnMaven\LearnMaven\Testng\testng.xml
+
+2023-07-04 15:21:58,860 [main] ERROR LearnMaven - This is an error message specifically logged to the error log file
+2023-07-04 15:21:58,860 [main] INFO  base.BaseClass - Test XGLT_15177
+2023-07-04 15:21:58,861 [main] INFO  XGLT_15177 - Setting up browser
+2023-07-04 15:21:59,188 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 114.0.5735.90 (resolved driver for Chrome 114)
+2023-07-04 15:21:59,211 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\dP-PL\.cache\selenium\chromedriver\win32\114.0.5735.90\chromedriver.exe
+2023-07-04 16:10:01,156 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\dP-PL\LearnMaven\LearnMaven\Testng\testng.xml
+
+2023-07-04 16:10:01,701 [main] ERROR LearnMaven - This is an error message specifically logged to the error log file
+2023-07-04 16:10:01,701 [main] INFO  base.BaseClass - Test XGLT_15177
+2023-07-04 16:10:01,701 [main] INFO  XGLT_15177 - Setting up browser
+2023-07-04 16:10:05,941 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 114.0.5735.90 (resolved driver for Chrome 114)
+2023-07-04 16:10:05,959 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\dP-PL\.cache\selenium\chromedriver\win32\114.0.5735.90\chromedriver.exe
+2023-07-04 16:13:32,352 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\dP-PL\LearnMaven\LearnMaven\Testng\testng.xml
+
+2023-07-04 16:13:33,074 [main] ERROR LearnMaven - This is an error message specifically logged to the error log file
+2023-07-04 16:13:33,075 [main] INFO  base.BaseClass - Test XGLT_15177
+2023-07-04 16:13:33,075 [main] INFO  XGLT_15177 - Setting up browser
+2023-07-04 16:13:33,389 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 114.0.5735.90 (resolved driver for Chrome 114)
+2023-07-04 16:13:33,411 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\dP-PL\.cache\selenium\chromedriver\win32\114.0.5735.90\chromedriver.exe
+2023-07-04 16:21:01,926 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\dP-PL\LearnMaven\LearnMaven\Testng\testng.xml
+
+2023-07-04 16:21:02,512 [main] ERROR LearnMaven - This is an error message specifically logged to the error log file
+2023-07-04 16:21:02,512 [main] INFO  base.BaseClass - Test XGLT_15177
+2023-07-04 16:21:02,513 [main] INFO  XGLT_15177 - Setting up browser
+2023-07-04 16:21:02,813 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 114.0.5735.90 (resolved driver for Chrome 114)
+2023-07-04 16:21:02,834 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\dP-PL\.cache\selenium\chromedriver\win32\114.0.5735.90\chromedriver.exe

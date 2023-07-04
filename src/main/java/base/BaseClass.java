@@ -2,6 +2,7 @@ package base;
 
 import browserfactory.BrowserFactory;
 import dataProvider.ConfigReader;
+import helper.File_Archieve;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.core.config.Configurator;
@@ -33,17 +34,21 @@ public class BaseClass
             log = LogManager.getLogger(getClass());
             errorLog = LogManager.getLogger("LearnMaven");
     }
-  //@Parameters({"browser","URL"})
-    String browser=ConfigReader.getProperty("browser");
-    String url=ConfigReader.getProperty("url");
+    @BeforeSuite
+    public void archive_old()
+    {
+        File_Archieve fa=new File_Archieve();
+        fa.create_archive("reports","Archive/old_Reports/Reports.zip");
+        fa.create_archive("screenshots","Archive/old_screenshots/Screenshots.zip");
+        fa.deleteFilesFromFolder("reports");
+        fa.deleteFilesFromFolder("screenshots");
+    }
+
   public void setupBrowser()
   {
-
-        log.info("Setting up browser");
-      System.out.println("LOG:INFO - Setting up browser");
+      log.info("Setting up browser");
       BrowserFactory bf= new BrowserFactory();
       driver=bf.startBrowser(ConfigReader.getProperty("browser"),ConfigReader.getProperty("url"));
-      //return driver;
   }
 
     //@AfterSuite
@@ -51,8 +56,6 @@ public class BaseClass
     {
         log.info("closing up browser");
         driver.quit();
-
-        System.out.println("LOG:INFO - Closing the browser and application");
     }
     @BeforeMethod
     public void name(ITestContext context)

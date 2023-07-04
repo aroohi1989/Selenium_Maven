@@ -93,7 +93,6 @@ public class Network_programbreakformatPage extends BaseClass
         handle_Popup();
      //   System.out.println(program_break_format.getCssValue("width"));
 
-
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         program_break_add.click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));

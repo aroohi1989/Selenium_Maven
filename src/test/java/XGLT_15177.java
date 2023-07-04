@@ -17,7 +17,7 @@ import static listners.ExtentManager.extent;
 public class XGLT_15177 extends BaseClass
 {
     public String testName;
-    ExtentTest test = extent.createTest("Test Login to XGL", "This is a test to login to XGL");
+  //  ExtentTest test = extent.createTest("Test Login to XGL", "This is a test to login to XGL");
 
     // move to base
     @BeforeMethod
@@ -31,20 +31,16 @@ public class XGLT_15177 extends BaseClass
     {
         errorLog.error("This is an error message specifically logged to the error log file");
         logger.info("Test XGLT_15177");
-        test.info("Step 1: Navigate to XGL");
          //login to XGL
         BaseClass b= new BaseClass();
         b.setupBrowser();
          LoginPage lp= new LoginPage(driver);
-        test.info("Enter username and password");
         lp.LoginToApplication(uname,pwrd);
         lp.addwait();
-        Utility ut= new Utility();
-        //Verify login
-        test.info("Verify user is logged in");
+
         Assert.assertEquals(driver.getCurrentUrl().contains("MissionControl"),true);
-        Reporter.log("Pass: Login Successfull");
-        ut.captureScreenshot(driver,testName);
+        //Reporter.log("Pass: Login Successfull");
+        //ut.captureScreenshot(driver,testName);
     }
 
 
@@ -52,7 +48,7 @@ public class XGLT_15177 extends BaseClass
     //@Parameters({"Version"})
     public void About()
     {
-        test.info("Read and verify the about page information");
+        //test.info("Read and verify the about page information");
         AboutPage ap= new AboutPage(driver);
         ap.read_about(ConfigReader.getProperty("Version"));
         System.out.println("Method name is "+testName);

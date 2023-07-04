@@ -1,5 +1,6 @@
 package helper;
 
+import base.BaseClass;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -25,6 +26,22 @@ public class Utility
 
 
     }
+    public synchronized static WebDriver getDriver() {
+        return BaseClass.driver;
+    }
+    public static String getScreenshot() {
+        File srcFile = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);
+        String path = System.getProperty("user.dir") + "/screenshot/" + System.currentTimeMillis() + ".png";
+        File destination = new File(path);
+
+        try {
+            FileUtils.copyFile(srcFile, destination);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return path;
+    }
     public static String getCurrentTime()
     {
         String date;
@@ -42,7 +59,6 @@ public class Utility
            // FileHandler.copy(((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE), new File("./screenshots/Screenshot_"+getCurrentTime()+".png"));
 
             FileHandler.copy(((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE), new File("./screenshots/"+testName+"_"+getCurrentTime()+".png"));
-            System.out.println("In screenshot");
         }
         catch(IOException e)
         {
