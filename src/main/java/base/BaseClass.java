@@ -3,10 +3,12 @@ package base;
 import browserfactory.BrowserFactory;
 import dataProvider.ConfigReader;
 import helper.File_Archieve;
+import listners.WebEventListener;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.core.config.Configurator;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.ITestContext;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
@@ -26,6 +28,8 @@ public class BaseClass
     public static final Logger logger = LogManager.getLogger(BaseClass.class);
     protected static org.apache.logging.log4j.Logger log;
     protected static Logger errorLog;
+    public  static EventFiringWebDriver e_driver;
+    public static WebEventListener eventListener;
 
     @BeforeSuite
     public void setupLog4j() throws URISyntaxException{

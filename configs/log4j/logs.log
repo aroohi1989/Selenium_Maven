@@ -82,3 +82,19 @@ java.nio.file.FileAlreadyExistsException: C:\Users\dP-PL\LearnMaven\LearnMaven\t
 2023-07-04 16:21:02,513 [main] INFO  XGLT_15177 - Setting up browser
 2023-07-04 16:21:02,813 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 114.0.5735.90 (resolved driver for Chrome 114)
 2023-07-04 16:21:02,834 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\dP-PL\.cache\selenium\chromedriver\win32\114.0.5735.90\chromedriver.exe
+2023-07-07 11:46:14,285 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\dP-PL\LearnMaven\LearnMaven\Testng\testng.xml
+
+2023-07-07 11:46:14,951 [main] ERROR LearnMaven - This is an error message specifically logged to the error log file
+2023-07-07 11:46:14,951 [main] INFO  base.BaseClass - Test XGLT_15177
+2023-07-07 11:46:14,951 [main] INFO  XGLT_15177 - Setting up browser
+2023-07-07 11:46:19,894 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 114.0.5735.90 (resolved driver for Chrome 114)
+2023-07-07 11:46:19,938 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\dP-PL\.cache\selenium\chromedriver\win32\114.0.5735.90\chromedriver.exe
+2023-07-07 15:56:27,685 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\dP-PL\LearnMaven\LearnMaven\Testng\testng.xml
+
+2023-07-07 15:56:29,357 [main] ERROR LearnMaven - This is an error message specifically logged to the error log file
+2023-07-07 15:56:29,358 [main] INFO  base.BaseClass - Test XGLT_15177
+2023-07-07 15:56:29,358 [main] INFO  XGLT_15177 - Setting up browser
+2023-07-07 15:56:33,571 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 114.0.5735.90 (resolved driver for Chrome 114)
+2023-07-07 15:56:33,607 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\dP-PL\.cache\selenium\chromedriver\win32\114.0.5735.90\chromedriver.exe
