@@ -4,13 +4,9 @@ import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
-import static dataProvider.CustomDataProvider.getData;
 
 public class ExcelReader
 {
@@ -22,11 +18,11 @@ public class ExcelReader
         System.out.println("************ Loading Data From Excel *******************");
 
         Object [][] arr=null;
-
+        String WorkbookPath=ConfigReader.getPropertyvalue("testdataworkbook");
         try
         {
             // load excel
-            wb=new XSSFWorkbook(new FileInputStream(new File(System.getProperty("user.dir")+"/testdata/TestData.xlsx")));
+            wb=new XSSFWorkbook(new FileInputStream(WorkbookPath));
 
             // load sheet
             XSSFSheet sheet=wb.getSheet(sheetName);

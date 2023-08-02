@@ -6,12 +6,12 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
-public class ConfigReader
+public class ConfigReader extends CaselessProperties
 {
-    public static String getProperty(String key)
+    public static String getPropertyvalue(String key)
     {
 
-        Properties pro=new Properties();
+        ConfigReader pro=new ConfigReader();
 
         try
         {

@@ -2,6 +2,7 @@ package browserfactory;
 
 import base.BaseClass;
 import com.fasterxml.jackson.databind.ser.Serializers;
+import dataProvider.ConfigReader;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import listners.WebEventListener;
 import org.openqa.selenium.WebDriver;
@@ -30,7 +31,7 @@ public class BrowserFactory extends BaseClass
             WebDriverManager.edgedriver().setup();
             driver = new EdgeDriver();
         } else if (browserName.contains("Firefox")) {
-            System.setProperty("webdriver.gecko.driver", "C:\\Users\\dP-PL\\LearnMaven\\LearnMaven\\geckodriver.exe");
+            System.setProperty("webdriver.gecko.driver", ConfigReader.getPropertyvalue("GeckoexePath"));
             driver = new FirefoxDriver();
         }
         //Event Listener initialization

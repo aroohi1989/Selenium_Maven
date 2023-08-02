@@ -1,41 +1,46 @@
 package helper;
 
+import base.BaseClass;
+import org.openqa.selenium.WebDriver;
+import wrapper.WebDriverWrapper;
 
-import org.openqa.selenium.StaleElementReferenceException;
-
-import java.awt.*;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.NoSuchElementException;
-
-public class ExceptionHandling
+public class ExceptionHandling extends WebDriverWrapper
 {
-    public static void handleNoSuchElementException(NoSuchElementException e) {
-
-        System.out.println("NoSuchElementException occurred: " + e.getMessage());
+    public ExceptionHandling(WebDriver driver)
+    {
+        BaseClass.driver =driver;
     }
-    public static void handleStaleElementReferenceException(StaleElementReferenceException e) {
-
-        System.out.println("StaleElementReferenceException occurred: " + e.getMessage());
-    }
-    public static void handleNullPointerException(NullPointerException e) {
-
-        System.out.println("NullPointerException occurred: " + e.getMessage());
-    }
-    public static void handleArithmeticException(ArithmeticException e) {
-
-        System.out.println("ArithmeticException occurred: " + e.getMessage());
-    }
-    public static void handleIOException(IOException e) {
-
-        System.out.println("IOException occurred: " + e.getMessage());
-    }
-    public static void handleAWTException(AWTException e) {
-
-        System.out.println("AWTException occurred: " + e.getMessage());
-    }
-    public static void handleFileNotFoundException(FileNotFoundException e) {
-
-        System.out.println("FileNotFoundException occurred: " + e.getMessage());
+    public static String handleException(Exception e)
+    {
+        switch(e.getClass().getSimpleName())
+        {
+            case "NoSuchElementException" :
+                System.out.println("NoSuchElementException occurred: " + e.getMessage());
+                break;
+            case "StaleElementReferenceException" :
+                System.out.println("StaleElementReferenceException occurred: " + e.getMessage());
+                break;
+            case "NullPointerException" :
+                System.out.println("NullPointerException occurred: " + e.getMessage());
+                break;
+            case "ArithmeticException" :
+                System.out.println("ArithmeticException occurred: " + e.getMessage());
+                break;
+            case "IOException" :
+                System.out.println("IOException occurred: " + e.getMessage());
+                break;
+            case "AWTException" :
+                System.out.println("AWTException occurred: " + e.getMessage());
+                break;
+            case "FileNotFoundException":
+                System.out.println("FileNotFoundException occurred: " + e.getMessage());
+                break;
+            case "TimeoutException" :
+                System.out.println("TimeoutException occurred: " +e.getMessage());
+                break;
+            default:
+                System.out.println("Exception occurred "+e.getMessage());
+        }
+        return e.getMessage();
     }
 }

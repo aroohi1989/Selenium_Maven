@@ -25,15 +25,16 @@ public class Import_Schedules extends BaseClass
     @Test(description = "upload import schedules")
     public void Import_Schedules()
     {
-        String filepath= ConfigReader.getProperty("importSchedulePath");
+        String filepath= ConfigReader.getPropertyvalue("importSchedulePath");
         ImportSchedulePage is = new ImportSchedulePage(driver);
         try {
             is.setImport_Schedule(filepath);
         }
-        catch (AWTException e)
+        catch (Exception e)
         {
-            ExceptionHandling.handleAWTException(e);
+            String msg=ExceptionHandling.handleException(e);
             System.out.println("Some error occurred during schedule import ");
+            logger.info(msg);
         }
 
     }

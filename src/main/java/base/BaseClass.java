@@ -31,6 +31,7 @@ public class BaseClass
     public  static EventFiringWebDriver e_driver;
     public static WebEventListener eventListener;
 
+
     @BeforeSuite
     public void setupLog4j() throws URISyntaxException{
             Path log4jConfigPath = Paths.get(getClass().getClassLoader().getResource("log4j2.xml").toURI());
@@ -52,7 +53,7 @@ public class BaseClass
   {
       log.info("Setting up browser");
       BrowserFactory bf= new BrowserFactory();
-      driver=bf.startBrowser(ConfigReader.getProperty("browser"),ConfigReader.getProperty("url"));
+      driver=bf.startBrowser(ConfigReader.getPropertyvalue("browser"),ConfigReader.getPropertyvalue("url"));
   }
 
     //@AfterSuite

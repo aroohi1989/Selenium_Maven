@@ -6,24 +6,19 @@ import java.util.zip.ZipOutputStream;
 
 public class File_Archieve
 {
-    public void create_archive(String SourceDir, String DestinationFile)
-    {
+    public void create_archive(String SourceDir, String DestinationFile) {
+        ZipOutputStream zos = null;
+        FileOutputStream fos = null;
         try {
-            FileOutputStream fos = new FileOutputStream(DestinationFile);
-            ZipOutputStream zos = new ZipOutputStream(fos);
+            fos = new FileOutputStream(DestinationFile);
+            zos = new ZipOutputStream(fos);
             File sourceDirectory = new File(SourceDir);
             add_to_archive(sourceDirectory, sourceDirectory.getName(), zos);
+            System.out.println("Archive created successfully.");
             zos.close();
             fos.close();
-            System.out.println("Archive created successfully.");
-        }
-        catch(FileNotFoundException e)
-        {
-            ExceptionHandling.handleFileNotFoundException(e);
-        }
-        catch (IOException e)
-        {
-            ExceptionHandling.handleIOException(e);
+        } catch (Exception e) {
+            ExceptionHandling.handleException(e);
         }
     }
     public void add_to_archive(File file, String fileName, ZipOutputStream zos)   {
@@ -46,13 +41,11 @@ public class File_Archieve
             zos.closeEntry();
             fis.close();
         }}
-        catch (FileNotFoundException e)
+        catch (Exception e)
         {
-            ExceptionHandling.handleFileNotFoundException(e);
+            ExceptionHandling.handleException(e);
         }
-        catch (IOException e) {
-            ExceptionHandling.handleIOException(e);
-        }}
+        }
 
         public static void deleteFilesFromFolder(String SourceDir)
         {

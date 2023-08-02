@@ -29,7 +29,7 @@ public class Network_programbreakformat extends BaseClass
     {
         Network_programbreakformatPage bf= new Network_programbreakformatPage(driver);
 
-        break_format=bf.create_break_format(Network, ConfigReader.getProperty("inventorytype"));
+        break_format=bf.create_break_format(Network, ConfigReader.getPropertyvalue("inventorytype"));
 
         Reporter.log("Program Break format created "+break_format);
 
