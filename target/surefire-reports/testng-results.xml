@@ -20,31 +20,31 @@
       <![CDATA[Pass: About information read]]>
     </line>
   </reporter-output>
-  <suite started-at="2023-08-02T16:57:12 IST" name="Smoke Pack Suite" finished-at="2023-08-02T16:58:01 IST" duration-ms="48189">
+  <suite started-at="2023-08-03T17:16:08 IST" name="Smoke Pack Suite" finished-at="2023-08-03T17:16:51 IST" duration-ms="43002">
     <groups>
     </groups>
-    <test started-at="2023-08-02T16:57:12 IST" name="XGL2" finished-at="2023-08-02T16:58:01 IST" duration-ms="48189">
+    <test started-at="2023-08-03T17:16:08 IST" name="XGL2" finished-at="2023-08-03T17:16:51 IST" duration-ms="43002">
       <class name="XGLT_15177_Test">
-        <test-method is-config="true" signature="archive_old()[pri:0, instance:XGLT_15177_Test@2f7a7219]" started-at="2023-08-02T16:57:12 IST" name="archive_old" finished-at="2023-08-02T16:57:12 IST" duration-ms="137" status="PASS">
+        <test-method is-config="true" signature="archive_old()[pri:0, instance:XGLT_15177_Test@3a1d593e]" started-at="2023-08-03T17:16:08 IST" name="archive_old" finished-at="2023-08-03T17:16:08 IST" duration-ms="22" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- archive_old -->
-        <test-method is-config="true" signature="setupLog4j()[pri:0, instance:XGLT_15177_Test@2f7a7219]" started-at="2023-08-02T16:57:12 IST" name="setupLog4j" finished-at="2023-08-02T16:57:12 IST" duration-ms="33" status="PASS">
+        <test-method is-config="true" signature="setupLog4j()[pri:0, instance:XGLT_15177_Test@3a1d593e]" started-at="2023-08-03T17:16:08 IST" name="setupLog4j" finished-at="2023-08-03T17:16:08 IST" duration-ms="15" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupLog4j -->
-        <test-method is-config="true" signature="name(org.testng.ITestContext)[pri:0, instance:XGLT_15177_Test@2f7a7219]" started-at="2023-08-02T16:57:14 IST" name="name" finished-at="2023-08-02T16:57:14 IST" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="name(org.testng.ITestContext)[pri:0, instance:XGLT_15177_Test@3a1d593e]" started-at="2023-08-03T17:16:10 IST" name="name" finished-at="2023-08-03T17:16:10 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@267ff4df]]>
+                <![CDATA[org.testng.TestRunner@e26a3df]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- name -->
-        <test-method signature="LoginXGL(java.lang.String,java.lang.String)[pri:1, instance:XGLT_15177_Test@2f7a7219]" started-at="2023-08-02T16:57:14 IST" name="LoginXGL" data-provider="loginDetails" finished-at="2023-08-02T16:57:57 IST" duration-ms="43155" status="PASS">
+        <test-method signature="LoginXGL(java.lang.String,java.lang.String)[pri:1, instance:XGLT_15177_Test@3a1d593e]" started-at="2023-08-03T17:16:10 IST" name="LoginXGL" data-provider="loginDetails" finished-at="2023-08-03T17:16:48 IST" duration-ms="37978" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -60,7 +60,18 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LoginXGL -->
-        <test-method signature="About()[pri:2, instance:XGLT_15177_Test@2f7a7219]" started-at="2023-08-02T16:57:58 IST" name="About" finished-at="2023-08-02T16:58:00 IST" depends-on-methods="XGLT_15177_Test.LoginXGL" duration-ms="2601" status="PASS">
+        <test-method is-config="true" signature="name(org.testng.ITestContext)[pri:0, instance:XGLT_15177_Test@3a1d593e]" started-at="2023-08-03T17:16:48 IST" name="name" finished-at="2023-08-03T17:16:48 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@e26a3df]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- name -->
+        <test-method signature="About()[pri:2, instance:XGLT_15177_Test@3a1d593e]" started-at="2023-08-03T17:16:48 IST" name="About" finished-at="2023-08-03T17:16:51 IST" depends-on-methods="XGLT_15177_Test.LoginXGL" duration-ms="2603" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[InstanceQA134-PS xGL DB]]>
@@ -82,17 +93,6 @@
             </line>
           </reporter-output>
         </test-method> <!-- About -->
-        <test-method is-config="true" signature="name(org.testng.ITestContext)[pri:0, instance:XGLT_15177_Test@2f7a7219]" started-at="2023-08-02T16:57:58 IST" name="name" finished-at="2023-08-02T16:57:58 IST" duration-ms="0" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@267ff4df]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- name -->
       </class> <!-- XGLT_15177_Test -->
     </test> <!-- XGL2 -->
   </suite> <!-- Smoke Pack Suite -->

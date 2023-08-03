@@ -2,6 +2,7 @@ package helper;
 
 import base.BaseClass;
 import org.apache.commons.io.FileUtils;
+import org.apache.logging.log4j.Level;
 import org.openqa.selenium.*;
 import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -13,7 +14,6 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
-import java.util.Base64;
 import java.util.Date;
 import java.util.Random;
 
@@ -21,14 +21,11 @@ public class Utility extends WebDriverWrapper {
     public static String captureScreenshotInBase64(WebDriver driver) {
         TakesScreenshot ts = (TakesScreenshot) driver;
 
-        String base64 = ts.getScreenshotAs(OutputType.BASE64);
-
-        return base64;
-
+        return ts.getScreenshotAs(OutputType.BASE64);
 
     }
 
-    public synchronized static WebDriver getDriver() {
+    public  static synchronized WebDriver getDriver() {
         return BaseClass.driver;
     }
 
@@ -54,14 +51,11 @@ public class Utility extends WebDriverWrapper {
     }
 
     public void captureScreenshot(WebDriver driver, String testName) {
-        System.out.println("Starting screenshot");
+        log.log(Level.INFO,"Taking screenshot");
         try {
-            // FileUtils.copyFile(SrcFile, DestFile);
-            // FileHandler.copy(((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE), new File("./screenshots/Screenshot_"+getCurrentTime()+".png"));
-
             FileHandler.copy(((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE), new File("./screenshots/" + testName + "_" + getCurrentTime() + ".png"));
         } catch (IOException e) {
-            System.out.println("Something went wrong " + e.getMessage());
+            log.log(Level.ERROR,"Something went wrong "+ e.getMessage());
         }
 
     }
@@ -98,12 +92,11 @@ public class Utility extends WebDriverWrapper {
             select.selectByVisibleText(value);
         } catch (Exception e) {
             ExceptionHandling.handleException(e);
-            // logger.error(e.getMessage());
 
         }
     }
 
-    public static void selectRadiobutton(WebDriver driver, WebElement Locator, String value) {
+    public static void selectRadiobutton(WebDriver driver, WebElement Locator) {
         waitForElementPresent(driver, Locator, 5);
         try {
             if (!(Locator.isSelected())) {
@@ -111,7 +104,6 @@ public class Utility extends WebDriverWrapper {
             }
         } catch (Exception e) {
             ExceptionHandling.handleException(e);
-            //Logger.error("An error occurred: {}", e.getMessage());
         }
     }
 
@@ -126,8 +118,7 @@ public class Utility extends WebDriverWrapper {
     }
 
     public static void clickonWebElement(WebDriver driver, WebElement element, long waitTimeinseconds) {
-        // WebElement element1=null;
-        waitForElementPresent(driver, element, 5);
+        waitForElementPresent(driver, element, waitTimeinseconds);
         try {
             element.click();
         } catch (Exception e) {
@@ -154,7 +145,6 @@ public class Utility extends WebDriverWrapper {
             if(element.isDisplayed())
             {
                 String elementText = element.getAttribute("value");
-                System.out.println(elementText);
                 log.info(elementText);
             }
 
@@ -194,7 +184,6 @@ public class Utility extends WebDriverWrapper {
         catch(WebDriverException e)
         {
             ExceptionHandling.handleException(e);
-            logger.error("Exception occured: "+e.getMessage());
         }
     }
 
@@ -220,12 +209,10 @@ public class Utility extends WebDriverWrapper {
         {
             WebElement link = driver.findElement(By.linkText(linkText));
             link.click();
-            log.info("Successfully clicked on link:" +linkText);
         }
         catch(Exception e)
         {
             ExceptionHandling.handleException(e);
-            log.error("Exception occured: "+e.getMessage());
         }
     }
     public static void clickLinkbyAttribute(WebDriver driver, String attributeName, String attributeValue)
@@ -241,7 +228,6 @@ public class Utility extends WebDriverWrapper {
         catch(WebDriverException e)
         {
             ExceptionHandling.handleException(e);
-            log.error("Exception occured: "+e.getMessage());
         }
     }
     public static void acceptAlertBox(WebDriver driver)
@@ -254,7 +240,6 @@ public class Utility extends WebDriverWrapper {
         catch(Exception e)
         {
             ExceptionHandling.handleException(e);
-            log.error("Exception occured: "+e.getMessage());
         }
     }
     public static void cancelAlertBox(WebDriver driver)
@@ -267,7 +252,6 @@ public class Utility extends WebDriverWrapper {
         }
         catch(WebDriverException e) {
             ExceptionHandling.handleException(e);
-            log.error("Exception occured: " + e.getMessage());
         }
     }
     public static void getTextfromAlertBox(WebDriver driver)
@@ -282,7 +266,6 @@ public class Utility extends WebDriverWrapper {
         catch(WebDriverException e)
         {
             ExceptionHandling.handleException(e);
-            log.error("Exception occured: "+e.getMessage());
         }
 
     }
