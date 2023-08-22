@@ -7,8 +7,10 @@ import java.nio.file.Paths;
 import java.util.Calendar;
 import java.util.Date;
 
+import browserfactory.BrowserFactory;
 import dataProvider.ConfigReader;
 import helper.Utility;
+import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -83,10 +85,6 @@ public class ExtentReportListener implements ITestListener
                 result.getMethod().getDescription());
 
         extentTest.assignCategory(result.getTestContext().getSuite().getName());
-        /*
-         * methodName = StringUtils.capitalize(StringUtils.join(StringUtils.
-         * splitByCharacterTypeCamelCase(methodName), StringUtils.SPACE));
-         */
         extentTest.assignCategory(className);
         test.set(extentTest);
         test.get().getModel().setStartTime(getTime(result.getStartMillis()));
@@ -102,7 +100,7 @@ public class ExtentReportListener implements ITestListener
     public synchronized void onTestFailure(ITestResult result) {
         System.out.println((result.getMethod().getMethodName() + " failed!"));
         String methodName = result.getMethod().getMethodName();
-        test.get().pass(result.getThrowable(), MediaEntityBuilder.createScreenCaptureFromPath(Utility.getScreenshot()).build());
+        test.get().fail(result.getThrowable(), MediaEntityBuilder.createScreenCaptureFromPath(Utility.getScreenshot()).build());
         test.get().getModel().setEndTime(getTime(result.getEndMillis()));
     }
 

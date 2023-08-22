@@ -38,6 +38,9 @@ public class ExceptionHandling extends WebDriverWrapper
             case "TimeoutException" :
                 System.out.println("TimeoutException occurred: " +e.getMessage());
                 break;
+            case "SQLException" :
+                System.out.println("SQLException occurred: " +e.getMessage());
+                break;
             default:
                 System.out.println("Exception occurred "+e.getMessage());
         }

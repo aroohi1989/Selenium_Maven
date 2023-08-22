@@ -1,5 +1,6 @@
 package base;
 
+import ORParcer.RespositoryParser;
 import browserfactory.BrowserFactory;
 import dataProvider.ConfigReader;
 import helper.File_Archieve;
@@ -9,9 +10,10 @@ import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.core.config.Configurator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
+import org.testng.Assert;
 import org.testng.ITestContext;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.*;
+import pages.LoginPage;
 
 import java.net.URISyntaxException;
 import java.nio.file.Path;
@@ -30,6 +32,7 @@ public class BaseClass
     protected static Logger errorLog;
     public  static EventFiringWebDriver e_driver;
     public static WebEventListener eventListener;
+    public RespositoryParser parser;
 
 
     @BeforeSuite
@@ -48,7 +51,11 @@ public class BaseClass
         fa.deleteFilesFromFolder("reports");
         fa.deleteFilesFromFolder("screenshots");
     }
-
+    @BeforeSuite
+    public void initOR()
+    {
+        parser=new RespositoryParser(System.getProperty("user.dir")+"/configs/ObjectRepo.properties");
+    }
   public void setupBrowser()
   {
       log.info("Setting up browser");
@@ -56,7 +63,21 @@ public class BaseClass
       driver=bf.startBrowser(ConfigReader.getPropertyvalue("browser"),ConfigReader.getPropertyvalue("url"));
   }
 
-    //@AfterSuite
+    public void LoginXGL(String uname, String pwrd)
+    {
+        logger.info("Login to XGL");
+        setupBrowser();
+        LoginPage lp= new LoginPage(driver,parser);
+        lp.Login_To_Application(uname,pwrd);
+        lp.addwait();
+        Assert.assertTrue(driver.getCurrentUrl().contains("MissionControl"),"Login failed");
+    }
+    @BeforeClass
+    public void login()
+    {
+        LoginXGL(ConfigReader.getPropertyvalue("username"), ConfigReader.getPropertyvalue("password"));
+    }
+    @AfterClass
     public void closeBrowser()
     {
         log.info("closing up browser");

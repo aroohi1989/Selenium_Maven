@@ -1,9 +1,9 @@
 import base.BaseClass;
 import com.aventstack.extentreports.ExtentTest;
+import dataProvider.ConfigReader;
 import helper.Utility;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import pages.NetworkPage;
 
 import java.lang.reflect.Method;
@@ -13,15 +13,6 @@ import static listners.ExtentManager.extent;
 
 public class Create_Network extends BaseClass
 {
-    public String testName;
-    public String network;
-    ExtentTest test = extent.createTest("Test Login to XGL", "This is a test to login to XGL");
-
-    @BeforeMethod
-    public void handleTestMethodName(Method method)
-    {
-        testName = method.getName();
-    }
 
     @Test(priority = 1)
     public void search_Network()
@@ -34,7 +25,6 @@ public class Create_Network extends BaseClass
         Assert.assertTrue(b);
         if(b)
         {
-            ut.captureScreenshot(driver, testName);
             System.out.println("Can proceed to create a new network "+Network);
             this.Network=Network;
         }
@@ -52,5 +42,10 @@ public class Create_Network extends BaseClass
         Assert.assertTrue(result);
         System.out.println("Network "+Network+" is created");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    }
+    @AfterClass
+    public void tearDown()
+    {
+        closeBrowser();
     }
 }

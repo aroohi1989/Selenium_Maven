@@ -36,16 +36,12 @@ public class StringEncrypter
 
 
 
-
     public StringEncrypter(String encryptionScheme, String encryptionKey, String env1, String app) throws Exception
     {
         if (encryptionKey == null)
             throw new IllegalArgumentException("encryption key was null");
         if (encryptionKey.trim().length() < 24)
             throw new IllegalArgumentException("encryption key was less than 24 characters");
-
-
-
         boolean err = false;
         try
         {
@@ -57,9 +53,6 @@ public class StringEncrypter
                 digestOfPassword = md.digest(encryptionKey.getBytes(UNICODE_FORMAT));
             }
             final byte[] keyBytes = Arrays.copyOf(digestOfPassword, 24);
-
-
-
             if (encryptionScheme.equals(DESEDE_ENCRYPTION_SCHEME))
             {
                 //3DES encryption
@@ -144,19 +137,13 @@ public class StringEncrypter
                 cipher.init(Cipher.ENCRYPT_MODE, key);
             byte[] cleartext = unencryptedString.getBytes(UNICODE_FORMAT);
             ciphertext = cipher.doFinal(cleartext); //declare private so it can be shared with writeOut()
-
-
-
             return Base64.getEncoder().encodeToString(ciphertext);
-                    //printBase64Binary(ciphertext);
         }
         catch (Exception e)
         {
             throw new EncryptionException(e);
         }
     }
-
-
 
     public String decrypt(String encryptedString) throws EncryptionException
     {
@@ -171,9 +158,6 @@ public class StringEncrypter
                 cipher.init(Cipher.DECRYPT_MODE, key, ivParameters);
             else
                 cipher.init(Cipher.DECRYPT_MODE, key);
-
-
-
             byte[] cleartext =Base64.getDecoder().decode(encryptedString);
                     //Base64.parseBase64Binary(encryptedString);
             byte[] ciphertext = cipher.doFinal(cleartext);
@@ -184,8 +168,6 @@ public class StringEncrypter
             throw new EncryptionException(e);
         }
     }
-
-
 
     private String bytes2String(byte[] bytes)
     {
@@ -214,17 +196,9 @@ public class StringEncrypter
         }
     }
 
-
-
     public static class EncryptionException extends Exception
     {
-        /**
-         *
-         */
         private static final long serialVersionUID = 1L;
-
-
-
         public EncryptionException(Throwable t)
         {
             super(t);

@@ -1,16 +1,18 @@
 import base.BaseClass;
 import dataProvider.ConfigReader;
-import dataProvider.CustomDataProvider;
-import helper.JavaScriptExecutor;
+import helper.ScreenshotUtility;
 import org.testng.Assert;
 import org.testng.Reporter;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pages.AboutPage;
-import pages.LoginPage;
 
 public class XGLT_15177_Test extends BaseClass
 {
-    @Test(priority = 1,enabled = true,dataProvider = "loginDetails",dataProviderClass = CustomDataProvider.class)
+    ScreenshotUtility st=new ScreenshotUtility();
+
+   /* @Test(priority = 1,enabled = false,dataProvider = "loginDetails",dataProviderClass = CustomDataProvider.class)
     public void LoginXGL(String uname, String pwrd)
     {
         logger.info("Test XGLT_15177_Test");
@@ -20,9 +22,9 @@ public class XGLT_15177_Test extends BaseClass
         lp.Login_To_Application(uname,pwrd);
         lp.addwait();
         Assert.assertTrue(driver.getCurrentUrl().contains("MissionControl"),"Login failed");
-    }
+    }*/
 
-    @Test(priority = 2,dependsOnMethods ="LoginXGL",enabled = true)
+    @Test(priority = 2,enabled = true)
     public void About()
     {
         AboutPage ap= new AboutPage(driver);
@@ -31,8 +33,9 @@ public class XGLT_15177_Test extends BaseClass
         ap.clickAbout();
         Assert.assertEquals(ap.getVersion(),ConfigReader.getPropertyvalue("Version"));
         ap.printAboutDetails();
-
+        st.onDemandScreenshotReport();
         ap.click_about_Ok();
         Reporter.log("Pass: About information read");
     }
+
 }
